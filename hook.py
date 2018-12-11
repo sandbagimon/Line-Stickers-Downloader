@@ -25,6 +25,8 @@ def set_address(emote_address):
     title_name = str(soup.title)
     title_name=title_name[7:]
     title_name=title_name[:-36]
+    while title_name[-1] == ' ':
+        title_name = title_name[:-1]
     if not os.path.exists(title_name):
         os.makedirs(title_name)
 
