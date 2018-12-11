@@ -23,8 +23,8 @@ def set_address(emote_address):
     site = r.get(emote_address)
     soup = bs(site.content,'lxml')
     title_name = str(soup.title)
-    title_name=title_name.strip('<title>')
-    title_name=title_name.strip('– LINE stickers | LINE STORE</title>')
+    title_name=title_name[7:]
+    title_name=title_name[:-36]
     if not os.path.exists(title_name):
         os.makedirs(title_name)
 
